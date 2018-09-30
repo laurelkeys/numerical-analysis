@@ -24,7 +24,7 @@ def tridiagonal_lu(A):
     for i in range(n-1):
       U[i][i+1] = c[i]
     
-    U[1][1] = b[1]
+    U[0][0] = b[0]
     for k in range(1, n):
       L[k][k-1] = a[k-1]/U[k-1][k-1] # we use a[k-1] instead of a[k] since a starts at a_2
       U[k][k] = b[k] - L[k][k-1]*c[k-1]
