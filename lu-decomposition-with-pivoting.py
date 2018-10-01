@@ -40,7 +40,6 @@ def back_substitute(U, y):
 def decompose_and_solve(A, b):
     P, L, U = lu(A)
     Pb = dot(P, b)
-    Py = forward_substitute(L, Pb)
-    Px = back_substitute(U, Py)
-    x = dot(Px, P)
-    return (P, L, U, Py, Px, x)
+    y = forward_substitute(L, Pb)
+    x = back_substitute(U, y)
+    return (P, L, U, y, x)
