@@ -8,7 +8,7 @@ def xs(h, x0 = 0):
         yield x
         x += h # x_i+1 = x_i + h
 
-def run_method(n, func, x0, y0, h, method):
+def run_method(n, h, func, x0, y0, method):
     # IVP ODE:
     #  | y' = func(x, y)
     #  | y(x_0) = y_0
@@ -54,7 +54,7 @@ for i in range(1, n+1):
     print(f'y(x_{i}): {sol(next(x))}')
 
 print('\n-> Euler')
-run_method(n, f, iv[0], iv[1], h, method=euler)
+run_method(n, h, f, x0=iv[0], y0=iv[1], method=euler)
 
 print('\n-> RK4')
-run_method(n, f, iv[0], iv[1], h, method=rk4)
+run_method(n, h, f, x0=iv[0], y0=iv[1], method=rk4)
