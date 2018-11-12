@@ -2,6 +2,9 @@ import math
 
 ###### methods execution
 
+# subdivides the analysed interval [a, b] into n parts (uniform mesh)
+step = lambda n, a, b: (b-a)/n
+
 def xs(h, x0 = 0):
     x = x0 + h
     while True:
@@ -39,7 +42,7 @@ iv = (0, 1) # initial values (x_0, y_0)
 sol = lambda x: math.e**(-x+(x**3)/3) # exact solution of the ODE y'=f
 
 n = 4 # number of desired values, i.e.: y_0, y_1, ..., y_n
-h = 0.25 # step
+h = step(n, a=0, b=1) # h = (x_n-x_0)/n
 
 print('-> Given')
 print(f'y_0 = y(x_0) = {iv[1]}')
