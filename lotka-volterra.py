@@ -33,6 +33,12 @@ def euler(dt, u1_i, u2_i, f1, f2):
     u2 = u2_i + dt*f2(u1_i, u2_i) # u2_i+1
     return (u1, u2)
 
+def modified_euler(dt, u1_i, u2_i, f1, f2):
+    # calculates u2_i+1 using u1_i+1 instead of u1_i
+    u1 = u1_i + dt*f1(u1_i, u2_i) # u1_i+1
+    u2 = u2_i + dt*f2(u1, u2_i) # u2_i+1
+    return (u1, u2)
+
 def rk4(dt, u1_i, u2_i, f1, f2):
     # runge-kutta's method for the lotka volterra model
     p1 = f1(u1_i, u2_i)
