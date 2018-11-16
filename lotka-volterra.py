@@ -121,5 +121,5 @@ m2.c2 = 1
 m2.d2 = 1
 m2.u1_0 = 0.5
 m2.u2_0 = 0.5
-N = lambda T, dt: math.ceil(T/dt)
-lotka_volterra(T=20, N=N(T=20, dt=0.1), model=m2, methods=[euler, modified_euler, rk4])
+n = lambda T, dt: math.ceil(T/dt)
+lotka_volterra(T=20, N=n(T=20, dt=0.1), model=m2, methods=[euler, modified_euler, rk4])
