@@ -67,6 +67,7 @@ def lotka_volterra(N, T, model, methods=[euler], uvt='u_vs_t', uvu='u_vs_u'):
     f1 = lambda u1, u2: model.c1*u1 - model.d1*u1*u2 # u1' = f1
     f2 = lambda u1, u2: model.c2*u1*u2 - model.d2*u2 # u2' = f2
 
+    comparison = []
     for method in methods:
         ts = [0] # t_0, t_1, ..., t_N where [t_0, t_N] = [0, T]
         u1s = [model.u1_0] # u1_0, u1_1, ..., u1_N
@@ -90,14 +91,35 @@ def lotka_volterra(N, T, model, methods=[euler], uvt='u_vs_t', uvu='u_vs_u'):
         ax2 = fig2.add_subplot(111)
         ax2.plot(u1s, u2s) # plot u2 vs u1
         fig2.savefig(f'{method.__name__}-{uvu}.png' if len(methods) > 1 else f'{uvu}.png')
+        
+        comparison.append((u1s, u2s, method.__name__))
+    
+    if len(methods) > 1:
+        fig3 = plt.figure(figsize=(10, 10))
+        ax3 = fig3.add_subplot(111)
+        for x, y, m in comparison:
+            ax3.plot(x, y, label=m) # plot u2 vs u1
+        ax3.legend()
+        fig3.savefig('comparison.png')
     
     return u1s, u2s, ts
 
-m1 = Model()
-m1.c1 = 0.08
-m1.d1 = 0.09
-m1.c2 = 0.07
-m1.d2 = 0.075
-m1.u1_0 = 3
-m1.u2_0 = 1
-lotka_volterra(T=200, N=200, model=m1, methods=[euler, rk4])
+# m1 = Model()
+# m1.c1 = 0.08
+# m1.d1 = 0.09
+# m1.c2 = 0.07
+# m1.d2 = 0.075
+# m1.u1_0 = 3
+# m1.u2_0 = 1
+# lotka_volterra(T=200, N=2000, model=m1)
+# lotka_volterra(T=200, N=20000, model=m1)
+
+m2 = Model()
+m2.c1 = 1
+m2.d1 = 1
+m2.c2 = 1
+m2.d2 = 1
+m2.u1_0 = 0.5
+m2.u2_0 = 0.5
+N = lambda T, dt: math.ceil(T/dt)
+lotka_volterra(T=20, N=N(T=20, dt=0.1), model=m2, methods=[euler, modified_euler, rk4])
