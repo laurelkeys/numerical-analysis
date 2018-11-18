@@ -24,7 +24,7 @@ def lagrange_basis(n, a=0, b=1, num=100):
         fig, ax = plt.subplots()
         for i, base in zip(range(xs.size), basis):
             y_axis = lambdify(x, base)(x_axis)
-            ax.plot(x_axis, y_axis, label=rf'$l_{i}$')
+            ax.plot(x_axis, y_axis, label=rf'$\ell_{i}$')
         ax.legend()
         plt.show()
         fig.savefig(f'lagrange-{n}.png')
