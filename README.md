@@ -42,9 +42,8 @@ Plots the [Lagrange basis polynomials](https://en.wikipedia.org/wiki/Lagrange_po
 Solves a linear equation in the form ![](https://latex.codecogs.com/gif.latex?A%20x%20%3D%20b) by performing the LU (lower–upper) decomposition of a matrix with [partial pivoting](https://en.wikipedia.org/wiki/LU_decomposition#LU_factorization_with_partial_pivoting).
 
 ### Example
-Running `decompose_and_solve(A, b)` returns `(P, L, U, y, x)` such that:
-![](https://latex.codecogs.com/gif.latex?PA%20=%20LU)
-where
+Running `decompose_and_solve(A, b)` returns `(P, L, U, y, x)` such that ![](https://latex.codecogs.com/gif.latex?PA%20=%20LU), where:
+
 ![](https://latex.codecogs.com/gif.latex?%5Cbegin%7Bcases%7D%20Ly%20%3D%20Pb%20%5C%5C%20Ux%20%3D%20y%20%5Cend%7Bcases%7D)
 
 
