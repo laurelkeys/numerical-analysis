@@ -62,7 +62,7 @@ Running `decompose_and_solve(A, b)` returns `(P, L, U, y, x)` such that ![](http
 ## lu-decomposition
 Solves a linear equation in the form ![](https://latex.codecogs.com/gif.latex?A%20x%20%3D%20b) by performing the [LU (lower–upper) decomposition](https://en.wikipedia.org/wiki/LU_decomposition) of a matrix without pivoting.
 ### Example
-Running `decompose_and_solve(A, b)` returns `(L, U, y, x)` such that ![](https://latex.codecogs.com/gif.latex?A%20=%20LU), after printing L, U and their dot product.
+Running `decompose_and_solve(A, b)` returns `(L, U, y, x)`, such that ![](https://latex.codecogs.com/gif.latex?A%20=%20LU), after printing L, U and their dot product.
 ```
 >>> decompose_and_solve([[4,3],[6,3]], [4,6])
 [[1.0, 0.0], 
@@ -85,7 +85,7 @@ array([[4., 3.],
 ## tridiagonal-lu-decompostion
 Performs the LU decomposition of a [tridiagonal matrix](https://en.wikipedia.org/wiki/Tridiagonal_matrix) to solve a linear equation in the form ![](https://latex.codecogs.com/gif.latex?A%20x%20%3D%20b).
 ### Example
-Running `tridiagonal_decompose_and_solve(A, b)` returns `(L, U, y, x)` such that ![](https://latex.codecogs.com/gif.latex?PA%20=%20LU), after printing L, U and their dot product.
+Running `tridiagonal_decompose_and_solve(A, b)` returns `(L, U, y, x)`, such that ![](https://latex.codecogs.com/gif.latex?A%20=%20LU), after printing L, U and their dot product.
 ```
 >>> tridiagonal_decompose_and_solve([[4,3],[6,3]], [4,6])
 [[1.0, 0.0], 
