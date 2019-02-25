@@ -2,6 +2,8 @@
 Scripts developed to implement concepts seen in Unicamp's Numerical Analysis course, MS211.
 
 See below a quick explanation of each:
+- [ivp-ode-numerical-methods](#ivp-ode-numerical-methods)
+- [lagrange-basis](#lagrange-basis)
 
 ## ivp-ode-numerical-methods
 Runs a generic method for solving Initial Value Problems (Ordinary Differential Equations) in the form:
@@ -23,7 +25,7 @@ y_3: 8
 y_4: 16
 ```
 
-## lagrange_basis
+## lagrange-basis
 Plots the [Lagrange basis polynomials](https://en.wikipedia.org/wiki/Lagrange_polynomial#Definition) of $n^{th}$ order.
 
 ### Example
