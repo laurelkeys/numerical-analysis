@@ -26,7 +26,7 @@ y_3: 8
 y_4: 16
 ```
 
-## lagrange_basis
+## lagrange-basis
 Plots the [Lagrange basis polynomials](https://en.wikipedia.org/wiki/Lagrange_polynomial#Definition) of n<sup>th</sup> order.
 ### Example
 ```
@@ -83,7 +83,7 @@ array([[4., 3.],
 
 
 ## tridiagonal-lu-decompostion
-Performs the LU decomposition of a [tridiagonal matrix](https://en.wikipedia.org/wiki/Tridiagonal_matrix) to solve a linear equation in the form ![](https://latex.codecogs.com/gif.latex?A%20x%20%3D%20b).
+Performs the LU decomposition of a [tridiagonal matrix](https://en.wikipedia.org/wiki/Tridiagonal_matrix) to solve a linear equation in the form ![](https://latex.codecogs.com/gif.latex?A%20x%20%3D%20b) (thus it is optimized and faster than using **lu-decomposition**).
 ### Example
 Running `tridiagonal_decompose_and_solve(A, b)` returns `(L, U, y, x)`, such that ![](https://latex.codecogs.com/gif.latex?A%20=%20LU), after printing L, U and their dot product.
 ```
