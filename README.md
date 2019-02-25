@@ -6,12 +6,7 @@ See below a quick explanation of each:
 - [lagrange-basis](#lagrange-basis)
 
 ## ivp-ode-numerical-methods
-Runs a generic method for solving Initial Value Problems (Ordinary Differential Equations) in the form:
-
-$\begin{cases}
-    y' = f(x, y)\\
-    y(x_0) = y_0
-\end{cases}$
+Runs a generic method for solving Initial Value Problems (Ordinary Differential Equations) in the form $y' = f(x, y)$, $y(x_0) = y_0$.
 
 [Euler's method](https://en.wikipedia.org/wiki/Euler_method) and Runge-Kutta's fourth order method [RK4](https://en.wikipedia.org/wiki/Runge%E2%80%93Kutta_methods#The_Runge%E2%80%93Kutta_method) are implemented.
 
